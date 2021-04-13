@@ -30,6 +30,11 @@ cd kevin
 expo start
 ```
 
+### On the Expo Go app on Android
+Scan the QR code in console, or on the web GUI
+
+The app should load!
+
 ## bad operating systems:
 
 idk
