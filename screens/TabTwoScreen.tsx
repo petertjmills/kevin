@@ -1,18 +1,30 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
+import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
-export default function TabTwoScreen() {
+
+export default function TabTwoScreen(){
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
-    </View>
-  );
+
+      <View style={styles.calendar}>
+        <CalendarList
+          markedDates={{
+            '2021-04-20': {textColor: 'green'},
+            '2021-04-22': {startingDay: true, color: 'green'},
+            '2021-04-23': {selected: true, endingDay: true, color: 'green', textColor: 'gray'},
+            '2021-04-04': {disabled: true, startingDay: true, color: 'green', endingDay: true}
+          }}
+          // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
+          markingType={'period'}
+        />
+      </View>
+    );
+
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -29,4 +41,9 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
+  calendar: {
+  flex: 2,
+    alignItems: 'center'
+  },
+
 });
