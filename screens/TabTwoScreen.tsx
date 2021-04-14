@@ -1,10 +1,7 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
-import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
-
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
-
+import {CalendarList,} from 'react-native-calendars';
+import { View, } from '../components/Themed';
+import { styles } from "../constants/Styles";
 
 export default function TabTwoScreen(){
   return (
@@ -24,26 +21,3 @@ export default function TabTwoScreen(){
     );
 
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-  calendar: {
-  flex: 2,
-    alignItems: 'center'
-  },
-
-});

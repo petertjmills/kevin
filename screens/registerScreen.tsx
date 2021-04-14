@@ -2,6 +2,7 @@ import { Text, View } from "../components/Themed";
 import { Button, StyleSheet } from "react-native";
 import React, {useState} from "react";
 import { TextInput } from "react-native";
+import { styles } from "../constants/Styles";
 
 // @ts-ignore
 export default function registerScreen({navigation}){
@@ -46,6 +47,7 @@ export default function registerScreen({navigation}){
       <TextInput
         style={styles.input}
         placeholder={' Password...'}
+        placeholderTextColor = "#D50000"
         onChangeText={onChangePass}
         value={password}
         secureTextEntry={true}
@@ -53,48 +55,12 @@ export default function registerScreen({navigation}){
       <Button
         title="Register and Begin!"
         onPress={() => navigation.navigate('Root')}
-
       />
+      <Text style={styles.link}
+            onPress={() => navigation.navigate('Login')}>
+        Already have an account? Log-in here.</Text>
     </View>
 
   );
 
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  input: {
-    height: 40,
-    width: 200,
-    margin: 12,
-    borderWidth: 1,
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    alignItems: 'center',
-    justifyContent: 'center',
-
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-  list: {
-    flex: 1,
-    paddingTop: 22
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-  },
-  link: {
-    color: 'blue',
-    fontSize: 12
-  }
-});

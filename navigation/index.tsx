@@ -1,7 +1,7 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { Button, ColorSchemeName } from "react-native";
+import {ColorSchemeName } from "react-native";
 import { RootStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import BottomTabNavigator from "./BottomTabNavigator";
@@ -20,10 +20,6 @@ export default function Pepepepooniggerstyink({ colorScheme }: { colorScheme: Co
   );
 }
 
-
-
-// A root stack navigator is often used for displaying modals on top of all other content
-// Read more here: https://reactnavigation.org/docs/modal
 export const Stack = createStackNavigator<RootStackParamList>();
 
 export function RootNavigator() {

@@ -1,7 +1,8 @@
 import { Text, View } from "../components/Themed";
-import { Button, StyleSheet } from "react-native";
-import React, {useState} from "react";
+import { Button } from "react-native";
+import React from "react";
 import { TextInput } from "react-native";
+import { styles } from "../constants/Styles";
 
 // @ts-ignore
 export default function loginScreen({navigation}){
@@ -39,41 +40,3 @@ export default function loginScreen({navigation}){
   );
 
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  input: {
-    height: 40,
-    width: 200,
-    margin: 12,
-    borderWidth: 1,
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    alignItems: 'center',
-    justifyContent: 'center',
-
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-  list: {
-    flex: 1,
-    paddingTop: 22
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-  },
-  link: {
-    color: 'blue',
-    fontSize: 12
-  }
-});
