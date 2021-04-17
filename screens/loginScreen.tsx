@@ -3,6 +3,7 @@ import { Button } from "react-native";
 import React from "react";
 import { TextInput } from "react-native";
 import { styles } from "../constants/Styles";
+import auth from '@react-native-firebase/auth'
 
 // @ts-ignore
 export default function loginScreen({navigation}){
@@ -13,7 +14,7 @@ export default function loginScreen({navigation}){
   return (
 
   <View style={styles.container}>
-    <Text style={styles.title}>Welcome to {"{"}Kevin{"}"}</Text>
+    <Text style={styles.title}>Welcome to Medilert</Text>
     <TextInput
       style={styles.input}
       onChangeText={onChangeText}

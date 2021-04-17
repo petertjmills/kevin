@@ -19,7 +19,7 @@ export default function registerScreen({navigation}){
   return (
 
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to {"{"}Kevin{"}"}</Text>
+      <Text style={styles.title}>Welcome to Medilert</Text>
       <TextInput
         style={styles.input}
         onChangeText={onChangeUser}

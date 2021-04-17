@@ -5,7 +5,7 @@ import { Text, View } from '../components/Themed';
 export default function TabThreeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Medication history here some-fucking-how</Text>
+      <Text style={styles.title}>Medication?? Gamification?</Text>
     </View>
   );
 }
