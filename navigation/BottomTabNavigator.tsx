@@ -1,10 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
-import { createBottomTabNavigator, useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-
-import Colors from '../constants/Colors';
-import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
@@ -13,14 +10,13 @@ import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
-  const colorScheme = useColorScheme();
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Medication"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      initialRouteName="Medifriends"
+      tabBarOptions={{ activeTintColor:'#4d7cfc', inactiveBackgroundColor: '#1C1c1c',activeBackgroundColor: '#292929' }}>
       <BottomTab.Screen
-        name="Medication"
+        name="Medifriends"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-list" color={color} />,

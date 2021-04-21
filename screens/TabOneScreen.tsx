@@ -1,37 +1,76 @@
 import * as React from 'react';
-import { Text, View } from '../components/Themed';
-import { styles } from "../constants/Styles";
+import {
+  Card,
+  Avatar,
+  Title,
+  Paragraph,
+  ProgressBar,
+  Colors,
+} from "react-native-paper";
+import { ScrollView, TextInput, View } from "react-native";
+import { SearchBar } from 'react-native-elements';
 
-
-const cards = [
-  {
-    id: "0",
-    title: "Starry Night",
-    picture: require('../assets/starry.jpg'),
-    content: <Text>Starry Night</Text>
-  },
-  {
-    id: "1",
-    title: "Wheat Field",
-    picture: require('../assets/wheat.jpg'),
-    content: <Text>Wheat Field with Cypresses</Text>
-  },
-  {
-    id: "2",
-    title: "Bedroom in Arles",
-    picture: require('../assets/bed.jpg'),
-    content: <Text>Bedroom in Arles</Text>
-  }
-]
 
 export default function TabOneScreen() {
+  let search;
   return (
- <View style={{flex : 1, backgroundColor: 'white'}}>
-    <View style={{flex: 1, backgroundColor: 'blue'}}>
+ <View style={{paddingTop: 25,flex : 1, backgroundColor: '#656C7B'}}>
+    <SearchBar
+      placeholder='Find a Friend...'
+      containerStyle={{backgroundColor: '#000000'}}
+      inputStyle={{ paddingLeft: 10,backgroundColor: '#1C1E22'}}
+      platform={'default'}>
 
-      <View style={styles.container}>
-      </View>
-    </View>
+    </SearchBar>
+
+    <ScrollView style={{flex: 2, backgroundColor: '#000000'}}>
+
+
+      <Card style={{ backgroundColor:'#2e3238', margin: 15,paddingTop: 10,paddingLeft: 10,paddingRight: 10,paddingBottom:0}}>
+          <Avatar.Image size={45} source={require('../assets/avatar.png')} />
+        <Card.Content>
+          <Title style={{color:'white'}}>Joe Mama</Title>
+          <Paragraph style={{color:'#95959d'}}>Address: ??????</Paragraph>
+          <Paragraph style={{color:'#95959d'}}>Phone Number: ??????</Paragraph>
+          <Paragraph style={{color:'#95959d'}}>Required Medication: ??????</Paragraph>
+        </Card.Content>
+        <Card.Content>
+          <Paragraph style={{color:'#FFFFFF'}}>Progress Today:</Paragraph>
+        <ProgressBar progress={0.8} color={Colors.red800} />
+        </Card.Content>
+      </Card>
+
+      <Card style={{ backgroundColor:'#2e3238', margin: 15,paddingTop: 10,paddingLeft: 10,paddingRight: 10,paddingBottom:0}}>
+        <Avatar.Image size={45} source={require('../assets/avatar.png')} />
+        <Card.Content>
+          <Title style={{color:'white'}}>Joe Mama</Title>
+          <Paragraph style={{color:'#95959d'}}>Address: ??????</Paragraph>
+          <Paragraph style={{color:'#95959d'}}>Phone Number: ??????</Paragraph>
+          <Paragraph style={{color:'#95959d'}}>Required Medication: ??????</Paragraph>
+        </Card.Content>
+        <Card.Content>
+          <Paragraph style={{color:'#FFFFFF'}}>Progress Today:</Paragraph>
+          <ProgressBar progress={0.8} color={Colors.red800} />
+        </Card.Content>
+      </Card>
+
+      <Card style={{ backgroundColor:'#2e3238', margin: 15,paddingTop: 10,paddingLeft: 10,paddingRight: 10,paddingBottom:0}}>
+        <Avatar.Image size={45} source={require('../assets/avatar.png')} />
+        <Card.Content>
+          <Title style={{color:'white'}}>Joe Mama</Title>
+          <Paragraph style={{color:'#95959d'}}>Address: ??????</Paragraph>
+          <Paragraph style={{color:'#95959d'}}>Phone Number: ??????</Paragraph>
+          <Paragraph style={{color:'#95959d'}}>Required Medication: ??????</Paragraph>
+        </Card.Content>
+        <Card.Content>
+          <Paragraph style={{color:'#FFFFFF'}}>Progress Today:</Paragraph>
+          <ProgressBar progress={0.8} color={Colors.red800} />
+        </Card.Content>
+      </Card>
+
+
+
+    </ScrollView>
  </View>
   );
 }

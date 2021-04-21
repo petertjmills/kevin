@@ -1,5 +1,5 @@
 import { Text, View } from "../components/Themed";
-import { Button, StyleSheet } from "react-native";
+import { Button, Image, StyleSheet } from "react-native";
 import React, {useState} from "react";
 import { TextInput } from "react-native";
 import { styles } from "../constants/Styles";
@@ -19,7 +19,8 @@ export default function registerScreen({navigation}){
   return (
 
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Medilert</Text>
+      <Image style={{}} source={require('../assets/images/123123.png')}></Image>
+      <Image source={require('../assets/images/123123123123.png')}></Image>
       <TextInput
         style={styles.input}
         onChangeText={onChangeUser}

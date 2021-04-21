@@ -6,7 +6,7 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  Medication: undefined;
+  Medifriends: undefined;
   Schedule: undefined;
   History: undefined;
 };
