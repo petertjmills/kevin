@@ -9,6 +9,7 @@ export type BottomTabParamList = {
   Medifriends: undefined;
   Schedule: undefined;
   History: undefined;
+  Blog: undefined;
 };
 
 export type TabOneParamList = {
@@ -21,4 +22,8 @@ export type TabTwoParamList = {
 
 export type TabThreeParamList = {
   TabThreeScreen: undefined;
+};
+
+export type BlogParamList = {
+  Blog: undefined;
 };

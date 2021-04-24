@@ -21,6 +21,11 @@ export default {
             screens: {
               TabThreeScreen: 'three',
             },
+          },
+          Blog: {
+            screens: {
+              BlogScreen: 'four',
+            },
           }
         },
       },
