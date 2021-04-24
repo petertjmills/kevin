@@ -5,7 +5,8 @@ import * as React from 'react';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList } from '../types';
+import {BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, BlogParamList} from '../types';
+import Blog from "../screens/blogScreen";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -19,7 +20,7 @@ export default function BottomTabNavigator() {
         name="Medifriends"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-list" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-person-add" color={color} />,
         }}
       />
       <BottomTab.Screen
@@ -33,7 +34,14 @@ export default function BottomTabNavigator() {
         name="History"
         component={TabThreeNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-analytics" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-game-controller" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Blog"
+        component={BlogNavigator}
+        options={{
+            tabBarIcon: ({ color }) => <TabBarIcon name="ios-bookmarks" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -83,4 +91,17 @@ function TabThreeNavigator() {
       />
     </TabThreeStack.Navigator>
   );
+}
+const BlogStack = createStackNavigator<BlogParamList>();
+
+function BlogNavigator() {
+    return (
+        <BlogStack.Navigator>
+            <BlogStack.Screen
+                name="Blog"
+                component={Blog}
+                options={{ headerShown: false,}}
+            />
+        </BlogStack.Navigator>
+    );
 }

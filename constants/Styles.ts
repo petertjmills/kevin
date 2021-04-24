@@ -55,4 +55,10 @@ export const styles = StyleSheet.create({
     flex: 2,
     alignItems: 'center'
   },
+  blogButton: {
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: "black",
+    backgroundColor:'white'
+  }
 });

@@ -17,13 +17,13 @@ export default function TabOneScreen() {
  <View style={{paddingTop: 25,flex : 1, backgroundColor: '#656C7B'}}>
     <SearchBar
       placeholder='Find a Friend...'
-      containerStyle={{backgroundColor: '#000000'}}
+      containerStyle={{backgroundColor: '#141414'}}
       inputStyle={{ paddingLeft: 10,backgroundColor: '#1C1E22'}}
       platform={'default'}>
 
     </SearchBar>
 
-    <ScrollView style={{flex: 2, backgroundColor: '#000000'}}>
+    <ScrollView style={{flex: 2, backgroundColor: '#141414'}}>
 
 
       <Card style={{ backgroundColor:'#2e3238', margin: 15,paddingTop: 10,paddingLeft: 10,paddingRight: 10,paddingBottom:0}}>
