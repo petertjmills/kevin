@@ -8,9 +8,12 @@ import BottomTabNavigator from "./BottomTabNavigator";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import loginScreen from "../screens/loginScreen"
 import registerScreen from "../screens/registerScreen";
+import {firebaseConfig} from "../constants/config"
+import firebase from "firebase/app";
+import "firebase/firestore";
 
 
-export default function Pepepepooniggerstyink({ colorScheme }: { colorScheme: ColorSchemeName }) {
+export default function App({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
     <NavigationContainer
       linking={LinkingConfiguration}

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { TextInput } from "react-native";
 import { styles } from "../constants/Styles";
 
+firebase.initializeApp(firebaseConfig);
+
 
 // @ts-ignore
 export default function loginScreen({navigation}){
