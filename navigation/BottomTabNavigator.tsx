@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import MedFriendsScreen from '../screens/medFriendsScreen';
+import MediFriendsScreen from '../screens/mediFriendsScreen';
 import CalendarScreen from '../screens/calendarScreen';
 import GamesScreen from '../screens/gamesScreen';
 import {BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, BlogParamList} from '../types';
@@ -18,21 +18,21 @@ export default function BottomTabNavigator() {
       tabBarOptions={{ activeTintColor:'#4d7cfc', inactiveBackgroundColor: '#1C1c1c',activeBackgroundColor: '#292929' }}>
       <BottomTab.Screen
         name="Medifriends"
-        component={TabOneNavigator}
+        component={medifriendsNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-person-add" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Schedule"
-        component={TabTwoNavigator}
+        component={calendarNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-calendar" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="History"
-        component={TabThreeNavigator}
+        component={gamesNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-game-controller" color={color} />,
         }}
@@ -52,44 +52,44 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']
   return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
-const TabOneStack = createStackNavigator<TabOneParamList>();
+const medifriendsStack = createStackNavigator<TabOneParamList>();
 
-function TabOneNavigator() {
+function medifriendsNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabOneScreen"
-        component={MedFriendsScreen}
+    <medifriendsStack.Navigator>
+      <medifriendsStack.Screen
+        name="Medifriends"
+        component={MediFriendsScreen}
         options={{ headerShown: false}}
       />
-    </TabOneStack.Navigator>
+    </medifriendsStack.Navigator>
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const calendarStack = createStackNavigator<TabTwoParamList>();
 
-function TabTwoNavigator() {
+function calendarNavigator() {
   return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
+    <calendarStack.Navigator>
+      <calendarStack.Screen
+        name="Calendar"
         component={CalendarScreen}
         options={{ headerShown: false,}}
       />
-    </TabTwoStack.Navigator>
+    </calendarStack.Navigator>
   );
 }
-const TabThreeStack = createStackNavigator<TabThreeParamList>();
+const gamesStack = createStackNavigator<TabThreeParamList>();
 
-function TabThreeNavigator() {
+function gamesNavigator() {
   return (
-    <TabThreeStack.Navigator>
-      <TabThreeStack.Screen
-        name="TabThreeScreen"
+    <gamesStack.Navigator>
+      <gamesStack.Screen
+        name="Games"
         component={GamesScreen}
         options={{ headerShown: false,}}
       />
-    </TabThreeStack.Navigator>
+    </gamesStack.Navigator>
   );
 }
 const BlogStack = createStackNavigator<BlogParamList>();

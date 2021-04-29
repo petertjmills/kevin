@@ -10,18 +10,19 @@ export type BottomTabParamList = {
   Schedule: undefined;
   History: undefined;
   Blog: undefined;
+  Settings: undefined;
 };
 
 export type TabOneParamList = {
-  TabOneScreen: undefined;
+  Medifriends: undefined;
 };
 
 export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+  Calendar: undefined;
 };
 
 export type TabThreeParamList = {
-  TabThreeScreen: undefined;
+  Games: undefined;
 };
 
 export type BlogParamList = {

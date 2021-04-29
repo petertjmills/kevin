@@ -7,12 +7,11 @@ import {
   ProgressBar,
   Colors,
 } from "react-native-paper";
-import { ScrollView, TextInput, View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { SearchBar } from 'react-native-elements';
 
 
-export default function MedFriendsScreen() {
-  let search;
+export default function MediFriendsScreen() {
   return (
  <View style={{paddingTop: 25,flex : 1, backgroundColor: '#656C7B'}}>
     <SearchBar

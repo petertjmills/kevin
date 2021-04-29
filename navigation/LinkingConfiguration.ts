@@ -7,19 +7,19 @@ export default {
       Login: '*',
       Root: {
         screens: {
-          TabOne: {
+          Medifriends: {
             screens: {
-              TabOneScreen: 'one',
+              MedFriendsScreen: 'one',
             },
           },
-          TabTwo: {
+          Calendar: {
             screens: {
-              TabTwoScreen: 'two',
+              CalendarScreen: 'two',
             },
           },
-          TabThree: {
+          Games: {
             screens: {
-              TabThreeScreen: 'three',
+              GamesScreen: 'three',
             },
           },
           Blog: {
