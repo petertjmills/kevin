@@ -53,22 +53,24 @@ export default function TabOneScreen() {
       for (var i = medIds.length - 1; i >= 0; i--) {
         var id = medIds[i]
         const med = await SecureStore.getItemAsync(id)
+        // @ts-ignore
         const medDat = JSON.parse(med)
-        meds[id] = medDat 
+        // @ts-ignore
+        meds[id] = medDat
       }
       setMedications(meds)
     }
     getValue();
 
   }, [medIds]);
-
+  // @ts-ignore
   const saveNewMedication = async (medication) => {
     var id = uuidv4()
     await SecureStore.setItemAsync(id, JSON.stringify(medication));
     await SecureStore.setItemAsync("medications", JSON.stringify([...medIds, id]));
     setUpdate(!update)
   }
-
+  // @ts-ignore
   const deleteMedication = async (key) =>{
     await SecureStore.deleteItemAsync(key)
     var ids =[...medIds]
@@ -76,12 +78,13 @@ export default function TabOneScreen() {
     await SecureStore.setItemAsync('medications', JSON.stringify(filteredIds))
     setUpdate(!update)
   }
-
+  // @ts-ignore
   const getOneMed = async (key) => {
     const med = await SecureStore.getItemAsync(key)
+    // @ts-ignore
     return JSON.parse(med)
   }
-
+  // @ts-ignore
   const updateAmount = async (key, amount) => {
     var medication = await getOneMed(key)
     medication.amount = parseInt(medication.amount) + parseInt(amount)
@@ -110,7 +113,7 @@ export default function TabOneScreen() {
           daySelectionAnimation={{type: 'border', duration: 200, borderWidth: 1, borderHighlightColor: 'black'}}
         />
 
-        <Agenda 
+        <Agenda
           date={date}
           meds={medications}
           updateAmount={updateAmount}

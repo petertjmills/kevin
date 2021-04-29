@@ -28,3 +28,6 @@ export type TabThreeParamList = {
 export type BlogParamList = {
   Blog: undefined;
 };
+export type SettingsParamList = {
+  Settings: undefined;
+};

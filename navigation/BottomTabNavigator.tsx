@@ -5,8 +5,16 @@ import * as React from 'react';
 import MediFriendsScreen from '../screens/mediFriendsScreen';
 import CalendarScreen from '../screens/calendarScreen';
 import GamesScreen from '../screens/gamesScreen';
-import {BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, BlogParamList} from '../types';
+import {
+  BottomTabParamList,
+  TabOneParamList,
+  TabTwoParamList,
+  TabThreeParamList,
+  BlogParamList,
+  SettingsParamList
+} from "../types";
 import Blog from "../screens/blogScreen";
+import SettingsScreen from '../screens/settingsScreen'
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -42,6 +50,13 @@ export default function BottomTabNavigator() {
         component={BlogNavigator}
         options={{
             tabBarIcon: ({ color }) => <TabBarIcon name="ios-bookmarks" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Settings"
+        component={SettingsNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-settings" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -104,4 +119,17 @@ function BlogNavigator() {
             />
         </BlogStack.Navigator>
     );
+}
+const SettingsStack = createStackNavigator<SettingsParamList>();
+
+function SettingsNavigator() {
+  return (
+    <SettingsStack.Navigator>
+      <SettingsStack.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{ headerShown: false,}}
+      />
+    </SettingsStack.Navigator>
+  );
 }
