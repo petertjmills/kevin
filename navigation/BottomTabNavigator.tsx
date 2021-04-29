@@ -2,9 +2,9 @@ import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import TabThreeScreen from '../screens/TabThreeScreen';
+import MedFriendsScreen from '../screens/medFriendsScreen';
+import CalendarScreen from '../screens/calendarScreen';
+import GamesScreen from '../screens/gamesScreen';
 import {BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, BlogParamList} from '../types';
 import Blog from "../screens/blogScreen";
 
@@ -59,7 +59,7 @@ function TabOneNavigator() {
     <TabOneStack.Navigator>
       <TabOneStack.Screen
         name="TabOneScreen"
-        component={TabOneScreen}
+        component={MedFriendsScreen}
         options={{ headerShown: false}}
       />
     </TabOneStack.Navigator>
@@ -73,7 +73,7 @@ function TabTwoNavigator() {
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
         name="TabTwoScreen"
-        component={TabTwoScreen}
+        component={CalendarScreen}
         options={{ headerShown: false,}}
       />
     </TabTwoStack.Navigator>
@@ -86,7 +86,7 @@ function TabThreeNavigator() {
     <TabThreeStack.Navigator>
       <TabThreeStack.Screen
         name="TabThreeScreen"
-        component={TabThreeScreen}
+        component={GamesScreen}
         options={{ headerShown: false,}}
       />
     </TabThreeStack.Navigator>

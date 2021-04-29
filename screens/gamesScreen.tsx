@@ -5,7 +5,7 @@ import { Text, View } from '../components/Themed';
 import RNSpeedometer from 'react-native-speedometer';
 
 
-export default function TabThreeScreen() {
+export default function GamesScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Gamification Additional Stuff</Text>

@@ -3,7 +3,7 @@ import {CalendarList,} from 'react-native-calendars';
 import { View, } from '../components/Themed';
 import { styles } from "../constants/Styles";
 
-export default function TabTwoScreen(){
+export default function CalendarScreen(){
   return (
 
       <View style={styles.calendar}>

@@ -11,7 +11,7 @@ import { ScrollView, TextInput, View } from "react-native";
 import { SearchBar } from 'react-native-elements';
 
 
-export default function TabOneScreen() {
+export default function MedFriendsScreen() {
   let search;
   return (
  <View style={{paddingTop: 25,flex : 1, backgroundColor: '#656C7B'}}>
