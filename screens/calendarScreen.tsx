@@ -118,6 +118,7 @@ export default function TabOneScreen() {
           meds={medications}
           updateAmount={updateAmount}
         ></Agenda>
+
         <MedicationList
           updateAmount={updateAmount}
           save={saveNewMedication}
