@@ -51,6 +51,8 @@
     "react-native-speedometer": "^1.0.5",
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "~0.13.12",
+    "tailwind-rn": "^3.0.1",
+    "tailwindcss": "^2.1.2",
     "yarn": "^1.22.10"
   },
   "devDependencies": {

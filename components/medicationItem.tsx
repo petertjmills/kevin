@@ -6,6 +6,8 @@ import Moment from 'react-moment';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 
+import { getColor, tw }  from '../constants/styling/tailwind'
+
 type Props = {
   medication?: any;
   delete?: any
@@ -27,7 +29,7 @@ export function Medication(props: Props) {
   const showMenu = () => {
     _menu.show();
   };
-  //update 
+  //update
   const [modalVisible, setModalVisible] = React.useState(false);
 
   const openUpdateModal = () => {
@@ -46,10 +48,23 @@ export function Medication(props: Props) {
     props.delete(props.id)
   }
 
+  //get color based on ammount
+
+  const getColorByAmount = (amount, dose) => {
+    const doseInt = parseInt(dose)
+    if(amount/doseInt <= 2){
+      return tw('text-error')
+    } else if (amount/doseInt <= 5) {
+      return tw('text-warning')
+    } else {
+      return tw('')
+    }
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>{props.medication.name}</Text>
-      <Text>{props.medication.amount} left</Text>
+    <View style={tw('flex flex-row drop-shadow-sm h-20 items-center justify-evenly')}>
+      <Text style={tw('h2 flex-auto px-5')}>{props.medication.name}</Text>
+      <Text style={[getColorByAmount(props.medication.amount, props.medication.dose), tw('caption')]}>{props.medication.amount} left</Text>
 
       <Modal
         animationType="slide"
@@ -88,17 +103,19 @@ export function Medication(props: Props) {
           </View>
         </View>
       </Modal>
-      
+
       <Menu
           ref={setMenuRef}
           button={
-            <TouchableOpacity onPress={showMenu}>
+            <TouchableOpacity onPress={showMenu} style={tw('px-3')}>
                 <Icon
                   name='more-horiz'
-                  size={24}
-                  color={'grey'} />
+                  size={37}
+                  color={getColor('dark')}
+                />
             </TouchableOpacity>
           }
+
         >
           <MenuItem onPress={openUpdateModal}>
           <Icon

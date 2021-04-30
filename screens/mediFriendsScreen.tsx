@@ -10,67 +10,77 @@ import {
 import { ScrollView, View } from "react-native";
 import { SearchBar } from 'react-native-elements';
 
+import { LogoTop } from '../components/LogoTop';
+
+import { getColor, tw }  from '../constants/styling/tailwind'
 
 export default function MediFriendsScreen() {
   return (
- <View style={{paddingTop: 25,flex : 1, backgroundColor: '#656C7B'}}>
+ <View style={tw('pt-10 bg-light h-full')}>
+    <LogoTop />
     <SearchBar
       placeholder='Find a Friend...'
-      containerStyle={{backgroundColor: '#141414'}}
-      inputStyle={{ paddingLeft: 10,backgroundColor: '#1C1E22'}}
-      platform={'default'}>
+      containerStyle={tw('bg-light')}
+      inputStyle={tw('bg-light')}
+      platform={'android'}>
 
     </SearchBar>
 
-    <ScrollView style={{flex: 2, backgroundColor: '#141414'}}>
+    <ScrollView style={tw('bg-light')}>
 
 
-      <Card style={{ backgroundColor:'#2e3238', margin: 15,paddingTop: 10,paddingLeft: 10,paddingRight: 10,paddingBottom:0}}>
-          <Avatar.Image size={45} source={require('../assets/avatar.png')} />
-        <Card.Content>
-          <Title style={{color:'white'}}>Joe Mama</Title>
-          <Paragraph style={{color:'#95959d'}}>Address: ??????</Paragraph>
-          <Paragraph style={{color:'#95959d'}}>Phone Number: ??????</Paragraph>
-          <Paragraph style={{color:'#95959d'}}>Required Medication: ??????</Paragraph>
-        </Card.Content>
-        <Card.Content>
-          <Paragraph style={{color:'#FFFFFF'}}>Progress Today:</Paragraph>
-        <ProgressBar progress={0.8} color={Colors.red800} />
-        </Card.Content>
+      <Card style={tw('drop-shadow bg-light')}>
+        <View style={tw('flex flex-row')}>
+          <View style={tw('p-8')}>
+            <Avatar.Image size={72} source={require('../assets/avatar.png')} />
+          </View>
+          <View style={tw('pt-8 flex')}>
+            <Card.Content style={tw('h-10')}>
+              <Title style={tw('text-dark h2 pt-8')}>Joe Mama</Title>
+            </Card.Content>
+            <Card.Content>
+              <Paragraph style={tw('text-dark pt-4')}>Progress Today:</Paragraph>
+              <ProgressBar progress={0.8} color={Colors.red800} />
+            </Card.Content>
+          </View>
+        </View>
       </Card>
 
-      <Card style={{ backgroundColor:'#2e3238', margin: 15,paddingTop: 10,paddingLeft: 10,paddingRight: 10,paddingBottom:0}}>
-        <Avatar.Image size={45} source={require('../assets/avatar.png')} />
-        <Card.Content>
-          <Title style={{color:'white'}}>Joe Mama</Title>
-          <Paragraph style={{color:'#95959d'}}>Address: ??????</Paragraph>
-          <Paragraph style={{color:'#95959d'}}>Phone Number: ??????</Paragraph>
-          <Paragraph style={{color:'#95959d'}}>Required Medication: ??????</Paragraph>
-        </Card.Content>
-        <Card.Content>
-          <Paragraph style={{color:'#FFFFFF'}}>Progress Today:</Paragraph>
-          <ProgressBar progress={0.8} color={Colors.red800} />
-        </Card.Content>
+      <Card style={tw('drop-shadow bg-light')}>
+        <View style={tw('flex flex-row')}>
+          <View style={tw('p-8')}>
+            <Avatar.Image size={72} source={require('../assets/avatar.png')} />
+          </View>
+          <View style={tw('pt-8 flex')}>
+            <Card.Content style={tw('h-10')}>
+              <Title style={tw('text-dark h2 pt-8')}>Joe Mama</Title>
+            </Card.Content>
+            <Card.Content>
+              <Paragraph style={tw('text-dark pt-4')}>Progress Today:</Paragraph>
+              <ProgressBar progress={0.8} color={Colors.red800} />
+            </Card.Content>
+          </View>
+        </View>
       </Card>
 
-      <Card style={{ backgroundColor:'#2e3238', margin: 15,paddingTop: 10,paddingLeft: 10,paddingRight: 10,paddingBottom:0}}>
-        <Avatar.Image size={45} source={require('../assets/avatar.png')} />
-        <Card.Content>
-          <Title style={{color:'white'}}>Joe Mama</Title>
-          <Paragraph style={{color:'#95959d'}}>Address: ??????</Paragraph>
-          <Paragraph style={{color:'#95959d'}}>Phone Number: ??????</Paragraph>
-          <Paragraph style={{color:'#95959d'}}>Required Medication: ??????</Paragraph>
-        </Card.Content>
-        <Card.Content>
-          <Paragraph style={{color:'#FFFFFF'}}>Progress Today:</Paragraph>
-          <ProgressBar progress={0.8} color={Colors.red800} />
-        </Card.Content>
+      <Card style={tw('drop-shadow bg-light')}>
+        <View style={tw('flex flex-row')}>
+          <View style={tw('p-8')}>
+            <Avatar.Image size={72} source={require('../assets/avatar.png')} />
+          </View>
+          <View style={tw('pt-8 flex')}>
+            <Card.Content style={tw('h-10')}>
+              <Title style={tw('text-dark h2 pt-8')}>Joe Mama</Title>
+            </Card.Content>
+            <Card.Content>
+              <Paragraph style={tw('text-dark pt-4')}>Progress Today:</Paragraph>
+              <ProgressBar progress={0.8} color={Colors.red800} />
+            </Card.Content>
+          </View>
+        </View>
       </Card>
-
-
 
     </ScrollView>
  </View>
   );
 }
-

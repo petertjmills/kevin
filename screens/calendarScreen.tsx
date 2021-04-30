@@ -9,6 +9,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { Agenda } from '../components/TestComp';
 import { MedicationList } from '../components/mymedicationscomp';
+import { LogoTop } from '../components/LogoTop';
+
+import { getColor, tw }  from '../constants/styling/tailwind'
 
 export default function TabOneScreen() {
   //currentDate
@@ -96,6 +99,8 @@ export default function TabOneScreen() {
   }
 
   return (
+    <View style={tw('pt-10 bg-light h-full')}>
+    <LogoTop />
     <ScrollView
         refreshControl={
           <RefreshControl
@@ -111,6 +116,7 @@ export default function TabOneScreen() {
           onDateSelected={date => setDate(date)}
           selectedDate={date}
           daySelectionAnimation={{type: 'border', duration: 200, borderWidth: 1, borderHighlightColor: 'black'}}
+          calendarHeaderStyle={tw('subheading')}
         />
 
         <Agenda
@@ -128,6 +134,7 @@ export default function TabOneScreen() {
          </MedicationList>
       </View>
      </ScrollView>
+     </View>
   );
 }
 

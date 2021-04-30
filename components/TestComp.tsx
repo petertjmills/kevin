@@ -7,6 +7,9 @@ import * as SecureStore from 'expo-secure-store';
 
 import { AgendaItem } from "./agendaitem"
 
+import { getColor, tw }  from '../constants/styling/tailwind'
+
+
 type Props = {
   date?: moment.Moment;
   meds?: any
@@ -25,16 +28,16 @@ export function Agenda(props: Props) {
     var uidArr = []
     var ids = Object.keys(meds)
     //console.log(ids.length)
-     
+
     for (var i = ids.length - 1 ; i >= 0; i--) {
       var id = ids[i]
       var med = meds[id]
       //check if meds are today
       var dayToday = date.format("ddd")
-      
+
       if(med.days[dayToday]){
         var times = med.time
-        
+
         for (var m = Object.keys(times).length - 1; m >= 0; m--) {
           var time = new Date(times[m])
           //set all to 1/1/1970
@@ -50,7 +53,7 @@ export function Agenda(props: Props) {
           storeMedInstance(meditem.uid)
         }
       }
-      
+
     }
     outArr.sort((a, b) => a.time - b.time)
     setSortedMeds(outArr)
@@ -97,8 +100,8 @@ export function Agenda(props: Props) {
 
   return (
     <View>
-      <Moment element={Text} format="dddd Do">{date}</Moment>
-      <Text>{left} medications left today</Text>
+      <Moment element={Text} format="dddd Do" style={tw('subheading px-8')}>{date}</Moment>
+      <Text style={tw('caption px-8')}>{left} medications left today</Text>
       { sortedMeds.map((med, i) => <AgendaItem key={i} med={med} updateAmount={props.updateAmount} setMedInstance={setMedInstance} getMedInstance={getMedInstance}/>) }
 
     </View>

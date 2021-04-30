@@ -8,6 +8,10 @@ import { DayPicker } from "./daypicker"
 import { TimeSelect } from "./TimewPicker"
 import { Medication } from "./medicationItem"
 
+import { getColor, tw }  from '../constants/styling/tailwind'
+
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 type Props = {
   save?: any
   refresh?: any
@@ -36,11 +40,11 @@ export function MedicationList(props: Props) {
     tempDaysActive[day] = !tempDaysActive[day]
     setDays({ ...tempDaysActive });
   }
-  
+
   const [frequency, setFrequency] = React.useState(1);
   const [strfrequency, setStrFrequency] = React.useState("1");
   const [timeselects, setTimeSelects] = React.useState(null);
-  
+
   const [medName, setMedName] = React.useState("");
   const [medAmount, setMedAmount] = React.useState("");
   const [medDose, setMedDose] = React.useState("")
@@ -67,7 +71,7 @@ export function MedicationList(props: Props) {
 
   return (
     <View>
-      <Text>My Medications</Text>
+      <Text style={tw('subheading px-8')}>My Medications</Text>
 
       <Modal
         animationType="slide"
@@ -148,11 +152,12 @@ export function MedicationList(props: Props) {
 
       { Object.keys(props.meds || {}).map((key, i) => <Medication key={i} updateAmount={props.updateAmount} medication={props.meds[key]} id={key} delete={props.deleteItem}/>)  }
 
-      <Button
-        style={[styles.button, styles.buttonOpen]}
+      <Pressable
         onPress={() => setModalVisible(true)}
-        title="+"
-      />
+        style={tw('items-center p-5')}
+      >
+        <Icon size={36} name="add"/>
+      </Pressable>
     </View>
   );
 }

@@ -1,4 +1,3 @@
-import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
@@ -16,6 +15,9 @@ import {
 import Blog from "../screens/blogScreen";
 import SettingsScreen from '../screens/settingsScreen'
 
+import { getColor, tw }  from '../constants/styling/tailwind'
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
@@ -23,40 +25,53 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="Medifriends"
-      tabBarOptions={{ activeTintColor:'#4d7cfc', inactiveBackgroundColor: '#1C1c1c',activeBackgroundColor: '#292929' }}>
-      <BottomTab.Screen
-        name="Medifriends"
-        component={medifriendsNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-person-add" color={color} />,
-        }}
-      />
+      tabBarOptions={
+        {
+          activeTintColor:getColor("primary"),
+          inactiveBackgroundColor: getColor("light"),
+          activeBackgroundColor: getColor("light"),
+          style: tw("h-20 drop-shadow"),
+          showLabel: false
+        }
+      }
+    >
+
       <BottomTab.Screen
         name="Schedule"
         component={calendarNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-calendar" color={color} />,
-        }}
-      />
-      <BottomTab.Screen
-        name="History"
-        component={gamesNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-game-controller" color={color} />,
-        }}
+        options={
+          {
+            tabBarIcon: ({ color }) => <TabBarIcon name="calendar-today" color={color} />,
+            showLabel: false
+          }
+        }
       />
       <BottomTab.Screen
         name="Blog"
         component={BlogNavigator}
         options={{
-            tabBarIcon: ({ color }) => <TabBarIcon name="ios-bookmarks" color={color} />,
+            tabBarIcon: ({ color }) => <TabBarIcon name="library-books" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Redeem"
+        component={gamesNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="redeem" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Medifriends"
+        component={medifriendsNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="supervisor-account" color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Settings"
         component={SettingsNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-settings" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="settings" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -64,7 +79,7 @@ export default function BottomTabNavigator() {
 }
 
 function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
+  return <Icon size={36} {...props}/>;
 }
 
 const medifriendsStack = createStackNavigator<TabOneParamList>();
