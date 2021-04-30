@@ -20,7 +20,7 @@ export default function registerScreen({navigation}){
 
     <View style={tw('h-full')}>
         <ImageBackground source={require("../assets/GradientBG.png")} style={{resizeMode: 'stretch', flex: 1}}>
-          <View style={tw('items-center bg-transparent pt-32')}>    
+          <View style={tw('items-center bg-transparent pt-20')}>
 
               <Image source={require('../assets/Logo.png')} />
               <Text style={tw('text-light h1')}>Medilert</Text>
@@ -72,7 +72,7 @@ export default function registerScreen({navigation}){
                 </View>
 
             </View>
-              
+
 
           </View>
         </ImageBackground>
