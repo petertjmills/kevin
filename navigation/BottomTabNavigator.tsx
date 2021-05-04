@@ -13,7 +13,7 @@ import {
   SettingsParamList
 } from "../types";
 import Blog from "../screens/blogScreen";
-import SettingsScreen from '../screens/settingsScreen'
+import SettingsScreen from '../screens/optionsScreen'
 
 import { getColor, tw }  from '../constants/styling/tailwind'
 import Icon from 'react-native-vector-icons/MaterialIcons';

@@ -10,6 +10,7 @@ export type BottomTabParamList = {
   Schedule: undefined;
   History: undefined;
   Blog: undefined;
+  Redeem: undefined;
   Settings: undefined;
 };
 

@@ -26,6 +26,11 @@ export default {
             screens: {
               BlogScreen: 'four',
             },
+          },
+          Settings: {
+            screens: {
+              BlogScreen: 'five',
+            },
           }
         },
       },
