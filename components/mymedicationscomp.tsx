@@ -91,7 +91,7 @@ export function MedicationList(props: Props) {
               onChangeText={text => setMedName(text)}
             />
 
-            <Text style={styles.modalText}>Quantity</Text>
+            <Text style={styles.modalText}>Quantity in pack</Text>
 
             <TextInput
               placeholder="Amount..."
@@ -132,20 +132,21 @@ export function MedicationList(props: Props) {
 
             { Array(frequency).fill().map((_, i) => i).map(i => <TimeSelect key={i} id={i} addTime={addTime}/>) }
 
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>Cancel</Text>
-            </Pressable>
+            <View style={tw("flex-row")}>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+                <Text style={styles.textStyle}>Cancel</Text>
+              </Pressable>
 
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => saveMed()}
-            >
-              <Text style={styles.textStyle}>Save</Text>
-            </Pressable>
-
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => saveMed()}
+              >
+                <Text style={styles.textStyle}>Save</Text>
+              </Pressable>
+            </View>
           </View>
         </View>
       </Modal>

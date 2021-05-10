@@ -7,14 +7,14 @@ export default {
       Login: '*',
       Root: {
         screens: {
-          Medifriends: {
-            screens: {
-              MedFriendsScreen: 'one',
-            },
-          },
           Calendar: {
             screens: {
               CalendarScreen: 'two',
+            },
+          },
+          Medifriends: {
+            screens: {
+              MedFriendsScreen: 'one',
             },
           },
           Games: {

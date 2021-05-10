@@ -14,6 +14,7 @@ type Props = {
   date?: moment.Moment;
   meds?: any
   updateAmount?: any
+  scheduleNotifcation?: any
 };
 
 export function Agenda(props: Props) {
@@ -46,11 +47,12 @@ export function Agenda(props: Props) {
           time.setUTCDate(1)
           // create med uid
           var daydate = date.set({'hour': time.getHours(), 'minute':time.getMinutes(), 'second':time.getSeconds(), 'millisecond': time.getMilliseconds()})
+          console.log(daydate)
           var uid = id + daydate
           var meditem = {uid:uid, id: id, name:med.name, time:time, dose:med.dose}
           outArr.push(meditem)
           uidArr.push(uid)
-          storeMedInstance(meditem.uid)
+          storeMedInstance(meditem.uid, daydate)
         }
       }
 
@@ -79,13 +81,18 @@ export function Agenda(props: Props) {
     getUidTaken()
   }, [uids, update])
 
-  const storeMedInstance = async (key) => {
+  const storeMedInstance = async (key, date) => {
     const med = await SecureStore.getItemAsync(key)
     if(!med){
       console.log("creating item")
       await SecureStore.setItemAsync(key, "false")
+      createNotifcation(date)
     }
     setUpdate(!update)
+  }
+
+  const createNotifcation = async (date) => {
+    props.scheduleNotifcation(date)
   }
 
   const setMedInstance = async (key, val) => {

@@ -24,7 +24,7 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Medifriends"
+      initialRouteName="Calendar"
       tabBarOptions={
         {
           activeTintColor:getColor("primary"),
