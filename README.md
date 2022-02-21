@@ -1,4 +1,8 @@
-# kevin
+# Medilert
+
+<img width="412" alt="Screenshot 2021-05-03 at 13 14 21" src="https://user-images.githubusercontent.com/56031935/154871662-9a0ceccb-abf5-4bbf-bc4d-83b36754b1d1.png">
+
+
 Prescription calendar, reminds users when they need to take their medication
 
 # Dev setup
